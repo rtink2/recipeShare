@@ -1,0 +1,108 @@
+@import "bootstrap";
+
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fff5f5+0,ffeded+45,ffe5e5+100 */
+background: #fff5f5; /* Old browsers */
+background: -moz-linear-gradient(top,  #fff5f5 0%, #ffeded 45%, #ffe5e5 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #fff5f5 0%,#ffeded 45%,#ffe5e5 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #fff5f5 0%,#ffeded 45%,#ffe5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', endColorstr='#ffe5e5',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.badge-pill {
+	padding: 12px;
+	background-color: #AA5575;
+	border: 1px solid #41BABE;
+}
+
+.spBtn {
+	background-color: #AA5575;
+	border: 1px solid #41BABE;
+	color: #41BABE;
+	border: 1px solid #41BABE;
+}
+
+#specialButton:hover {
+	background-color: #41BABE;
+	color: #AA5575;
+	text-decoration: none;
+	border: 1px solid #AA5575;
+}
+
+.jumbotron h1 {
+  color: #41BABE;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.jumbotron h2 {
+  color:  #41BABE;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.jumbotron {
+  background-image: asset-url('cover_image.jpg');
+  background-size: cover;
+  height: 300px;
+}
+
+.page-footer {
+  background-color: #AA5575;
+}
+
+.description {
+  margin-top: 0;
+}
+
+.card a {
+  color: #41BABE;
+}
+
+.chef_info {
+  margin-top: 10px;
+}
+
+.colormatch a {
+  color: #41BABE;
+}
+
+.recipe-actions {
+  padding-top: 5px;
+  a {
+    color: #000808;
+  }
+}
+
+.edit-badge {
+  padding: 8px;
+}

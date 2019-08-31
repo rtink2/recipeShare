@@ -1,0 +1,34 @@
+<%= render 'shared/page_title', title: @recipe.name %>
+
+<div class="col-8 mx-auto">
+	<div class="card card-body mb-2">
+		 <h4 class="center description"><strong>Steps: </strong></h4>
+  <hr />
+  <%= simple_format(@recipe.description.capitalize) %>
+  <hr />
+  <div class="float-right">
+    <p class="center">
+      <em>Created by:</em>
+    </p>
+    <p class="center">
+      <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+    </p>
+    <p class="center">
+      <small><%= @recipe.chef.chefname.capitalize %></small>
+      <div class="float-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
+    </p>
+  </div>
+	</div>
+
+  <div class="recipe-actions">
+    <%= link_to 'Edit this recipe', edit_recipe_path(@recipe), class: 'badge badge-warning edit-badge' %>
+     <%= link_to 'Delete this recipe', recipe_path(@recipe), method: :delete,
+                  data: { confirm: 'Are you sure you want to delete?' },
+                  class: 'badge badge-danger edit-badge' %>
+  </div>
+   <div class="col-md-4 col-md-offset-4 colormatch">
+      [ <%= link_to "Return to recipes list", recipes_path %> ]
+    </div>
+
+
+</div>
