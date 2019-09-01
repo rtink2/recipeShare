@@ -106,3 +106,47 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
 .edit-badge {
   padding: 8px;
 }
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chef-title {
+  color: #41BABE;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.chef-title a:hover {
+	color: #AA5575;
+	text-decoration: none;
+}
+
+.apple_pagination {
+  // background: #f1f1f1;
+  // border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  .apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+  .apple_pagination .disabled {
+    color: #AA5575; }
+  .apple_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #AA5575;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: #AA5575 1px 1px 1px; }
+  .apple_pagination a {
+    text-decoration: none;
+    color: #AA5575; }
+    .apple_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline; }

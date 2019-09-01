@@ -1,5 +1,18 @@
 <%= render 'shared/page_title', title: "Chef #{@chef.chefname}'s Profile" %>
 
+<div class="row justify-content-center">
+  <div class="mx-auto" style="width: 200px;">
+    <%= gravatar_for @chef, size: 150 %>
+  </div>
+</div>
+<h4 align="center"><%= @chef.chefname %>'s recipes</h4>
 
-<h4 align="center"><%= @chef.chefname.capitalize %>'s recipes</h4>
-<%= render 'recipes/recipe', obj: @chef.recipes %>
+  <div class="pagination justify-content-center apple_pagination">
+    <%= will_paginate @chef_recipes %>
+  </div>
+
+	<%= render 'recipes/recipe', obj: @chef_recipes %>
+
+<div class="pagination justify-content-center apple_pagination">
+   <%= will_paginate @chef_recipes %>
+ </div>

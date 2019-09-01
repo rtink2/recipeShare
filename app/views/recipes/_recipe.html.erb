@@ -5,7 +5,7 @@
         <%= gravatar_for(recipe.chef, size: 120) %>
       </section>
     </div>
-    <div class="col-md-8 card">
+    <div class="col-md-8 card m-2">
       <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
       <p><%= truncate(recipe.description, length: 150) %></p>
       <p>
