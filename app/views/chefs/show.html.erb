@@ -1,8 +1,8 @@
 <%= render 'shared/page_title', title: "Chef #{@chef.chefname}'s Profile" %>
 
 <div class="row justify-content-center">
-  <div class="mx-auto" style="width: 200px;">
-    <%= gravatar_for @chef, size: 150 %>
+  <div class="mx-auto" style="width: 100px;">
+    <%= gravatar_for @chef, size: 50 %>
   </div>
 </div>
 <% if @chef.recipes.count != 0 %>

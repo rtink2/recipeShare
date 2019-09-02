@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-md-2">
       <section class="chef_info center">
-        <%= gravatar_for(recipe.chef, size: 120) %>
+        <%= gravatar_for(recipe.chef, size: 100) %>
       </section>
     </div>
-    <div class="col-md-8 card m-2">
+    <div class="col-md-8 card m-2 bg-c-gradient">
       <h4 class="chef-title"><%= link_to recipe.name, recipe_path(recipe) %></h4>
       <p><%= truncate(recipe.description, length: 150) %></p>
       <% if recipe.ingredients.any? %>
@@ -16,6 +16,7 @@
           <small>Created
             <%= time_ago_in_words(recipe.created_at) %> ago by
             <%= recipe.chef.chefname.capitalize %>
+            <%= pluralize(recipe.comments.count, 'Comment') %>
           </small>
         </span>
       </p>

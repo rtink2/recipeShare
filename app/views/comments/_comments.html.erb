@@ -1,0 +1,15 @@
+<div align="center">
+  <div class="pagination justify-content-center apple_pagination">
+    <%= will_paginate comments %>
+  </div>
+</div>
+
+	<% comments.each do |comment| %>
+  	<%= render(partial: 'comments/comment', object: comment) %>
+	<% end %>
+	
+<div align="center">
+  <div class="pagination justify-content-center apple_pagination">
+    <%= will_paginate comments %>
+  </div>
+</div>
