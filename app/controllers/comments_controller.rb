@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
 	def create
 		@recipe = Recipe.find(params[:recipe_id])
-		@comment = @recipe.comments.build(comment_params)
+		@comment = @recipe.comments.build(comments_params)
 		@comment.chef = current_chef
 		if @comment.save
 			flash[:success] = 'Comment was created'
