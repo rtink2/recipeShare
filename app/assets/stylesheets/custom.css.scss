@@ -35,16 +35,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
 }
 
 .badge-pill {
-	padding: 12px;
 	background-color: #AA5575;
 	border: 1px solid #41BABE;
+	text-decoration: none;
+}
+
+.badge-pill:hover {
+	background-color: #41BABE;
+	border: 1px solid #AA5575;
+	text-decoration: none;
+	a {
+	  color: #AA5575;
+	  text-decoration: none;
+	}
 }
 
 .spBtn {
 	background-color: #AA5575;
 	border: 1px solid #41BABE;
 	color: #41BABE;
-	border: 1px solid #41BABE;
 }
 
 #specialButton:hover {
@@ -145,6 +154,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
 .form-label-group input {
   height: auto;
   border-radius: 2rem;
+}
+
+.input_checkbox input {
+  width: auto !important;
+  margin-right: 2px;
+}
+
+.checkbox {
+  margin-left: 1rem;
 }
 
 .bg-c-gradient {

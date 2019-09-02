@@ -5,34 +5,43 @@
       <div class="col-6">
         <div class="card my-3 bg-c-gradient">
           <div class="card-body">
-    <%= form_for(@recipe, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-      <div class="form-group form-label-group">
-        <div class="control-label col-2">
-          <%= f.label :name %>
-        </div>
-        <div class="col-12">
-          <%= f.text_field :name, class: "form-control", placeholder: "Name of recipe", autofocus: true %>
+              <%= form_for(@recipe, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+                <div class="form-group form-label-group">
+                  <div class="control-label col-2">
+                    <%= f.label :name %>
+                  </div>
+                  <div class="col-12">
+                    <%= f.text_field :name, class: "form-control", placeholder: "Name of recipe", autofocus: true %>
+                  </div>
+                </div>
+                <div class="form-group form-label-group">
+                  <div class="control-label col-2">
+                    <%= f.label :description %>
+                  </div>
+                  <div class="col-12">
+                    <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Enter steps to create recipe" %>
+                  </div>
+                </div>
+                <div class="form-group form-label-group">
+                  <div class="row">
+                    <div class="col-8">
+                      <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
+                        <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group form-label-group">
+                  <div class="col-md-offset-2 col-md-10">
+                    <%= f.submit class: "btn btn-info spBtn text-uppercase", id: 'specialButton' %>
+                  </div>
+                </div>
+              <% end %>
+              <div class="col-10 cancel">
+                [ <%= link_to "Cancel request and return to recipes list", recipes_path %> ]
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="form-group form-label-group">
-        <div class="control-label col-2">
-          <%= f.label :description %>
-        </div>
-        <div class="col-12">
-          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Enter steps to create recipe" %>
-        </div>
-      </div>
-      <div class="form-group form-label-group">
-        <div class="col-md-offset-2 col-md-10">
-          <%= f.submit class: "btn btn-info spBtn text-uppercase", id: 'specialButton' %>
-        </div>
-      </div>
-    <% end %>
-    <div class="col-10 cancel">
-      [ <%= link_to "Cancel request and return to recipes list", recipes_path %> ]
-    </div>
-  </div>
-</div>
-</div>
-  </div>
 </div>

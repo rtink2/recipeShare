@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #AA5575;">
 
-	<%= link_to "RecipeShare", root_path, class: "navbar-brand", id: "logo" %>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<%= link_to "RecipeShare", root_path, class: "navbar-brand pl-5 d-flex ml-auto", id: "logo" %>
+
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav mx-auto w-100">
       <li class="nav-item">
         <%= link_to "Chefs", chefs_path, class: "nav-link" %>
@@ -13,43 +13,63 @@
       <li class="nav-item">
         <%= link_to "Recipes", recipes_path, class: "nav-link" %>
       </li>
+      <% if logged_in? %>
+      <!--  <li class="nav-item">-->
+      <!--  <%#= link_to "ChefChat", chat_path, class: "nav-link" %>-->
+      <!--</li>-->
+       <li class="nav-item">
+        <%= link_to "Create Recipe", new_recipe_path,  class: "nav-link" %>
+      </li>
+
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ingredients
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item">
+              <%= link_to "All Ingredients", ingredients_path,  class: "nav-link" %>
+            </a>
+            <% Ingredient.all.each do |ingredient| %>
+              <a class="dropdown-item">
+                <%= link_to ingredient.name.capitalize, ingredient_path(ingredient),  class: "nav-link" %>
+              </a>
+            <% end %>
+            <% if logged_in? && current_chef.admin? %>
+              <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item">
+                  <%= link_to "New Ingredient", new_ingredient_path,  class: "nav-link" %>
+                </a>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+        <ul class="nav navbar-nav ml-auto w-50 justify-content-end">
 
         <% if logged_in? %>
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_chef.chefname.capitalize %>'s Profile
+                 <%= "| Admin" if current_chef.admin? %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item">
+              <%= link_to "View your profile", chef_path(current_chef),  class: "nav-link" %>
+            </a>
+            <a class="dropdown-item">
+              <%= link_to "Edit your profile", edit_chef_path(current_chef),  class: "nav-link" %>
+            </a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item">
+            <%= link_to "Log Out", logout_path, method: :delete,  class: "nav-link" %>
+          </a>
+        <% else %>
           <li class="nav-item">
-              <%= link_to "Create Recipe", new_recipe_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <!--add ingredients path when create it-->
-            <%= link_to "Ingredients", new_recipe_path, class: 'nav-link' %>
+            <%= link_to "Log In", login_path, class: "nav-link" %>
           </li>
         <% end %>
+
       </ul>
-
-      <ul class="nav navbar-nav ml-auto w-50 justify-content-end">
-        <form class="form-inline my-2 my-lg-0">
-          <% if logged_in? %>
-           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
-              role="button" aria-haspopup="true" aria-expanded="false">
-              <%= current_chef.chefname.capitalize %>'s Profile <%= 'Admin' if current_chef.admin? %>
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "View your profile", chef_path(current_chef), class: 'nav-link' %></li>
-              <li><%= link_to "Edit your profile", edit_chef_path(current_chef), class: 'nav-link' %></li>
-
-              <li class="dropdown-divider"></li>
-
-            <li class="nav-item">
-              <%= link_to 'Log out', logout_path, method: :delete, class: "nav-link" %>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'Log in', login_path, class: "nav-link" %>
-            </li>
-          <% end %>
-            <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-            <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-        </form>
-      </ul>
+    </ul>
   </div>
 </nav>

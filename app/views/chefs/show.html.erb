@@ -5,14 +5,18 @@
     <%= gravatar_for @chef, size: 150 %>
   </div>
 </div>
-<h4 align="center"><%= @chef.chefname %>'s Recipes</h4>
+<% if @chef.recipes.count != 0 %>
+  <h4 align="center"><%= @chef.chefname %>'s Recipes</h4>
+
+    <div class="pagination justify-content-center apple_pagination">
+      <%= will_paginate @chef_recipes %>
+    </div>
+
+  	<%= render 'recipes/recipe', obj: @chef_recipes %>
 
   <div class="pagination justify-content-center apple_pagination">
-    <%= will_paginate @chef_recipes %>
+     <%= will_paginate @chef_recipes %>
   </div>
-
-	<%= render 'recipes/recipe', obj: @chef_recipes %>
-
-<div class="pagination justify-content-center apple_pagination">
-   <%= will_paginate @chef_recipes %>
- </div>
+<% else %>
+  <h4 align='center' class='mt-2'>You have not added any recipes yet!</h4>
+<% end %>
