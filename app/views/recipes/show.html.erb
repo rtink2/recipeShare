@@ -4,7 +4,7 @@
 	<div class="card card-body mb-2">
 		 <h4 class="center description"><strong>Steps: </strong></h4>
   <hr />
-  <%= simple_format(@recipe.description.capitalize) %>
+  <%= simple_format(@recipe.description) %>
   <hr />
   <div class="float-right">
     <p class="center">
@@ -21,14 +21,16 @@
 	</div>
 
   <div class="recipe-actions">
-    <%= link_to 'Edit this recipe', edit_recipe_path(@recipe), class: 'badge badge-warning edit-badge' %>
-     <%= link_to 'Delete this recipe', recipe_path(@recipe), method: :delete,
-                  data: { confirm: 'Are you sure you want to delete?' },
-                  class: 'badge badge-danger edit-badge' %>
+    <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
+      <%= link_to 'Edit this recipe', edit_recipe_path(@recipe), class: 'badge badge-warning edit-badge' %>
+       <%= link_to 'Delete this recipe', recipe_path(@recipe), method: :delete,
+                    data: { confirm: 'Are you sure you want to delete?' },
+                    class: 'badge badge-danger edit-badge' %>
+    <% end %>
   </div>
-   <div class="col-md-4 col-md-offset-4 colormatch">
-      [ <%= link_to "Return to recipes list", recipes_path %> ]
-    </div>
+  <div class="col-md-4 col-md-offset-4 cancel">
+    [ <%= link_to "Return to recipes list", recipes_path %> ]
+  </div>
 
 
 </div>

@@ -70,4 +70,12 @@ test "password should be atleast 5 character" do
     assert_not @chef.valid?
   end
 
+ test "associated recipes should be destroyed" do
+    @chef.save
+    @chef.recipes.create!(name: "testing destroy", description: "testing destroy function")
+    assert_difference 'Recipe.count', -1 do
+      @chef.destroy
+    end
+  end
+
 end

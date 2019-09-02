@@ -48,10 +48,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
 }
 
 #specialButton:hover {
-	background-color: #41BABE;
-	color: #AA5575;
+	background-color: #f6dd09;
+	color: #41BABE;
 	text-decoration: none;
-	border: 1px solid #AA5575;
+	border: 1px solid #41BABE;
 }
 
 .jumbotron h1 {
@@ -92,10 +92,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
   margin-top: 10px;
 }
 
-.colormatch a {
-  color: #41BABE;
-}
-
 .recipe-actions {
   padding-top: 5px;
   a {
@@ -112,15 +108,49 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
   padding-left: 0;
 }
 
-.chef-title {
+.chef-title a {
   color: #41BABE;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
 .chef-title a:hover {
 	color: #AA5575;
 	text-decoration: none;
+}
+
+.chef-delete a {
+  color: #AA5575;
+}
+
+.chef-delete a:hover {
+	color: #41BABE;
+	text-decoration: none;
+}
+
+.cancel a {;
+  color: #AA5575;
+}
+
+.cancel a:hover {
+	 color: #f40bad;
+	text-decoration: none;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
+
+.bg-c-gradient {
+  background: #DBE6F6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #41BABE, #DBE6F6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #41BABE, #DBE6F6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .apple_pagination {
@@ -150,3 +180,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
     color: #AA5575; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
+
