@@ -3,11 +3,12 @@ class CommentsController < ApplicationController
 
 	def create
 		@recipe = Recipe.find(params[:recipe_id])
-		@comment = @recipe.comments.build(comments_params)
+		@comment = @recipe.comments.build(comment_params)
 		@comment.chef = current_chef
 		if @comment.save
-			flash[:success] = 'Comment was created'
-			redirect_to recipe_path(@recipe)
+		ActionCable.server.broadcast "comments", render(partial: 'comments/comment', object: @comment)
+			# flash[:success] = 'Comment was created'
+			# redirect_to recipe_path(@recipe)
 		else
 			flash[:danger] = 'Comment was not created'
 			redirect_to :back
@@ -16,7 +17,7 @@ class CommentsController < ApplicationController
 
 	private
 
-	def comments_params
+	def comment_params
 		params.require(:comment).permit(:description)
 	end
 

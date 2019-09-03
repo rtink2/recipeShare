@@ -2,25 +2,35 @@
 
 html {
   height: 100%;
+  margin: 0;
+  background-repeat: repeat-x;
+  background: cover;
 }
 
 body {
+	// background: linear-gradient(to bottom, #B721FF, #2AF598, #fec051, #FEE140, #FA709A );
+  background-attachment: fixed;
+
   width: 100%;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fff5f5+0,ffeded+45,ffe5e5+100 */
-background: #fff5f5; /* Old browsers */
-background: -moz-linear-gradient(top,  #fff5f5 0%, #ffeded 45%, #ffe5e5 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #fff5f5 0%,#ffeded 45%,#ffe5e5 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #fff5f5 0%,#ffeded 45%,#ffe5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', endColorstr='#ffe5e5',GradientType=0 ); /* IE6-9 */
+  height: 100%;
+	margin: 0;
+}
 
-
+body:before{
+	content:'';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	// background: linear-gradient(to right bottom, rgba(255,255,255,0.2), #21D4FD 75%);
 }
 
 #logo {
   float: left;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
+  color: #0c5718;
+  text-transform: lowercase;
   letter-spacing: -1px;
   font-weight: bold;
 }
@@ -33,42 +43,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
 .center {
   text-align: center;
 }
-
-.badge-pill {
-	background-color: #AA5575;
-	border: 1px solid #41BABE;
-	text-decoration: none;
-}
-
-.badge-pill:hover {
-	background-color: #41BABE;
-	border: 1px solid #AA5575;
-	text-decoration: none;
-	a {
-	  color: #AA5575;
-	  text-decoration: none;
-	}
-}
-
-.spBtn {
-	background-color: #AA5575;
-	border: 1px solid #41BABE;
-	color: #41BABE;
-}
-
-#specialButton:hover {
-	background-color: #41BABE;
-	color: #AA5575;
-	text-decoration: none;
-	border: 1px solid #AA5575;
-}
-
-// #specialButton:hover {
-// 	background-color: #f6dd09;
-// 	color: #41BABE;
-// 	text-decoration: none;
-// 	border: 1px solid #41BABE;
-// }
 
 .jumbotron h1 {
   color: #41BABE;
@@ -93,7 +67,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
 }
 
 .page-footer {
-  background-color: #AA5575;
+  font-size: 10px;
 }
 
 .description {
@@ -101,7 +75,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
 }
 
 .card a {
-  color: #41BABE;
+  color: #49e663;
+  text-decoration: none;
 }
 
 .chef_info {
@@ -115,41 +90,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
   }
 }
 
-.edit-badge {
-  padding: 8px;
-}
-
 .listing {
   list-style: none;
   padding-left: 0;
 }
 
 .chef-title a {
-  color: #41BABE;
+  color: #15982b;
   font-weight: bold;
   font-size: 1em;
 }
 
 .chef-title a:hover {
-	color: #AA5575;
+	color: #0c5718;
 	text-decoration: none;
 }
 
 .chef-delete a {
-  color: #AA5575;
+  color: #49e663;
 }
 
 .chef-delete a:hover {
-	color: #41BABE;
+	color:  #15982b;
 	text-decoration: none;
 }
 
 .cancel a {;
-  color: #AA5575;
+  color: #49e663
 }
 
 .cancel a:hover {
-	 color: #f40bad;
+	 color: #15982b;
 	text-decoration: none;
 }
 
@@ -172,19 +143,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
   margin-left: 1rem;
 }
 
-.bg-c-gradient {
-  background: #ee9ca7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+// .bg-c-gradient {
+//   background: #f37af2;  /* fallback for old browsers */
+//   background: -webkit-linear-gradient(to right, #ffdde1, #f37af2);  /* Chrome 10-25, Safari 5.1-6 */
+//   background: linear-gradient(to right, #ffdde1, #f37af2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-}
-
-.bg-c-gradient2 {
-  background: #E0EAFC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
+// }
 
 .apple_pagination {
   // background: #f1f1f1;
@@ -195,11 +159,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
   .apple_pagination a, .apple_pagination span {
     padding: 0.2em 0.3em; }
   .apple_pagination .disabled {
-    color: #AA5575; }
+    color: #15982b; }
   .apple_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background-color: #AA5575;
+    background-color:#15982b;
     display: inline-block;
     width: 1.4em;
     height: 1.4em;
@@ -207,10 +171,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff5f5', end
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
     border-radius: 1em;
-    text-shadow: #AA5575 1px 1px 1px; }
+    text-shadow: #15982b 1px 1px 1px; }
   .apple_pagination a {
     text-decoration: none;
-    color: #AA5575; }
+    color: #49e663; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
 
