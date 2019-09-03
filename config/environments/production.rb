@@ -91,4 +91,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.web_socket-server_url = "wss://recipe-friends-share.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https//recipe-friends-share.herokuapp.com', 'http://recipe-friends-share.herokuapp.com']
 end
