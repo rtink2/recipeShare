@@ -18,12 +18,10 @@
         			<div class="col-md-offset-2 col-md-10">
 								<%= f.submit(@ingredient.new_record? ? "Add Ingredient" : "Update Ingredient",
 											class: "btn btn-success btn-sm") %>
+								<%= link_to "Return to recipes", recipes_path, class: 'btn btn-primary btn-sm' %>
         			</div>
       			</div>
     			<% end %>
-    			<div class="col-10 cancel">
-      			[ <%= link_to "Cancel request and return to recipes list", recipes_path %> ]
-    			</div>
   			</div>
 			</div>
 		</div>

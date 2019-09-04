@@ -12,7 +12,8 @@
   				<li><small><%= pluralize(ing.recipes.count, "recipe") if ing.recipes %></small></li>
           <% if logged_in? && current_chef.admin? %>
             <li class='chef-delete'>
-              <%= link_to "Edit this ingredient", edit_ingredient_path(ing) %>
+              <%= link_to "Edit Ingredient", edit_ingredient_path(ing), class: 'btn btn-success btn-sm' %>
+               <%= link_to 'Return to Recipes', recipes_path, class: 'btn btn-primary btn-sm' %>
             </li>
           <% end %>
         </div>

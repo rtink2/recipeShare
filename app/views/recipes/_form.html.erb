@@ -34,12 +34,10 @@
                 <div class="form-group form-label-group">
                   <div class="col-md-offset-2 col-md-10">
                     <%= f.submit class: "btn btn-success btn-sm" %>
+                    <%= link_to "Return to Recipes", recipes_path, class: 'btn btn-primary btn-sm' %>
                   </div>
                 </div>
               <% end %>
-              <div class="col-10 cancel">
-                [ <%= link_to "Cancel request and return to recipes list", recipes_path %> ]
-              </div>
             </div>
           </div>
         </div>

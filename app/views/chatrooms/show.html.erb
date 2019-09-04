@@ -1,0 +1,17 @@
+<%= render 'shared/page_title', title: "ChefChat" %>
+
+<div class="row chat-container">
+  <div class="col-8">
+    <div class="messages" id="messages">
+      <%= render @messages %>
+    </div>
+
+  </div>
+  <hr />
+  <div class="col-6 message-container">
+    <%= form_for(@message, remote: true, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    	<%= f.text_area :content, class: "form-control", data: { behavior: "room_speaker" }, placeholder: "Say something!" %>
+      <%= f.submit "Send", class: 'btn btn-primary', data: { send: "message" } %>
+    <% end %>
+  </div>
+</div>

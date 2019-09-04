@@ -14,9 +14,9 @@
         <%= link_to "Recipes", recipes_path, class: "nav-link" %>
       </li>
       <% if logged_in? %>
-      <!--  <li class="nav-item">-->
-      <!--  <%#= link_to "ChefChat", chat_path, class: "nav-link" %>-->
-      <!--</li>-->
+        <li class="nav-item">
+          <%= link_to "ChefChat", chat_path, class: "nav-link" %>
+        </li>
        <li class="nav-item">
         <%= link_to "Create Recipe", new_recipe_path,  class: "nav-link" %>
       </li>
