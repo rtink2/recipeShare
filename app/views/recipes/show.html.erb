@@ -23,7 +23,7 @@
       <small><%= @recipe.chef.chefname.capitalize %></small>
       <div class="float-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
     </p>
-  </div>
+
 
 
  <!--Edit & delete section-->
@@ -36,8 +36,21 @@
     <% end %>
     <%= link_to 'Return to Recipes', recipes_path, class: 'btn btn-primary btn-sm' %>
   </div>
+   </div>
+  <!--Like section-->
+   <div class="row liking p-3">
+      <div class="col-2">
+        <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+          <% end %> <%= @recipe.thumbs_up_total %> ||
+        <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+            <% end %> <%= @recipe.thumbs_down_total %>
+     </div>
+    </div>
   </div>
 </div>
+
 
  <!--Form for Comments-->
  <% if logged_in? %>
