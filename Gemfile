@@ -30,7 +30,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.13'
 gem 'will_paginate', '~> 3.1.8'
 gem 'bootstrap-will_paginate', '~> 1.0'
-gem 'font-awesome-rails', '~> 4.7.0.5'
+#gem 'font-awesome-rails', '~> 4.7.0.5'
+gem 'font_awesome5_rails', '~> 0.8.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
